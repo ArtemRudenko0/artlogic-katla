@@ -71,6 +71,7 @@
     <Compile Include="**\*.cs" Exclude="obj\Debug\*.cs;obj\Release\*.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
