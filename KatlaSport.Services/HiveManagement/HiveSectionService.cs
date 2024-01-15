@@ -45,7 +45,7 @@ namespace KatlaSport.Services.HiveManagement
                 throw new RequestedResourceNotFoundException();
             }
 
-            return Mapper.Map<DbHiveSection, HiveSection>(dbHiveSections[0]);
+            return Mapper.Map<DbHiveSection, HiveSection>(dbHiveSections.FirstOrDefault());
         }
 
         /// <inheritdoc/>
