@@ -13,9 +13,18 @@
         <td>{{section.code}}</td>
         <td>{{section.name}}</td>
         <td>
-          <div class="btn-group" role="group" aria-label="Edit group">
+          <span class="btn-toolbar" role="toolbar" aria-label="Section action buttons" style="display: block; white-space:nowrap;">
+            <div class="btn-group mr-2" role="group" aria-label="Delete section" *ngIf="!section.isDeleted" (click)="onDelete(section.id)">
+              <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+            <div class="btn-group mr-2" role="group" aria-label="Restore section" *ngIf="section.isDeleted" (click)="onRestore(section.id)">
+              <button type="button" class="btn btn-success">Undelete</button>
+            </div>
+            <div class="btn-group" role="group" aria-label="Edit section">
             <button routerLink="/section/{{section.id}}" type="button" class="btn btn-primary">Edit</button>
           </div>
+          
+        </span>
         </td>
       </tr>
     </tbody>
