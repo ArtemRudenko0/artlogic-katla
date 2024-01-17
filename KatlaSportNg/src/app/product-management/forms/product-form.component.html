@@ -1,7 +1,7 @@
 <div class="container">
   <h2>Product Editor</h2>
   <form (ngSubmit)="onSubmit()" #productEditorForm="ngForm">
-    <div class="form-group" *ngIf="existed">
+    <div class="form-group" *ngIf='existed'>
       <label for="idLabel">ID</label>
       <input type="text" class="form-control" id="id" aria-describedby="idLabel" [(ngModel)]="product.id" name="id" #id="ngModel"
         readonly>
