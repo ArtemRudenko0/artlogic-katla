@@ -21,7 +21,11 @@ namespace KatlaSport.WebApi.CustomFilters
             }
             else if (context.Exception is Exception)
             {
-                context.Response = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+                //_logger.LogError($"Database error in CreateHiveSectionAsync: {context.Exception.InnerException?.Message}");
+                //context.Exception.InnerException?.Message
+               context.Response = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+                context.Response.Content = new StringContent(context.Exception.InnerException?.Message ?? context.Exception.Message);
+                //context.Response = new HttpResponseMessage(HttpStatusCode.InternalServerError);
             }
         }
     }
