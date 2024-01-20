@@ -13,7 +13,7 @@ export class HiveSectionListComponent implements OnInit {
 
   hiveSectionId: number;
   hiveSections: Array<HiveSectionListItem>;
-
+  hiveId: number;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -30,7 +30,6 @@ export class HiveSectionListComponent implements OnInit {
     var hiveSection = this.hiveSections.find(h => h.id == hiveSectionId);
     this.hiveSectionService.setHiveSectionStatus(hiveSection.id, false).subscribe(s => hiveSection.isDeleted = false);
   }
-
   ngOnInit() {
     this.route.params.subscribe(p => {
       this.hiveSectionId = p['id'];

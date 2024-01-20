@@ -19,7 +19,10 @@
         /// Gets or sets a hive section code.
         /// </summary>
         public string Code { get; set; }
-
+        /// <summary>
+        /// Gets or sets a hive identifier.
+        /// </summary>
+        public int StoreHiveId { get; set; }
         /// <summary>
         /// Gets or sets a value indicating whether a hive is deleted.
         /// </summary>
